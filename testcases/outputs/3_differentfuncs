@@ -1,0 +1,7 @@
+__libc_start_main(0x400606, 1, 0x7fffffffe618, 0x400670 <unfinished ...>
+malloc(256)                                                             = 0x602010
+calloc(0, 256)                                                          = 0x602120
+realloc(0x602010, 512)                                                  = 0x602140
+free(0x602140)                                                          = <void>
+free(0x602120)                                                          = <void>
++++ exited (status 0) +++

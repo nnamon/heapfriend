@@ -1,0 +1,36 @@
+__libc_start_main(0x400686, 1, 0x7ffe84c813f8, 0x400a70 <unfinished ...>
+fwrite("\nThis is a simple chunks overlap"..., 1, 46, 0x7f7db3ed7540)   = 46
+fwrite("Let's start to allocate 3 chunks"..., 1, 45, 0x7f7db3ed7540)    = 45
+malloc(248)                                                             = 0xe1e010
+malloc(248)                                                             = 0xe1e110
+malloc(120)                                                             = 0xe1e210
+fprintf(0x7f7db3ed7540, "The 3 chunks have been allocated"..., 0xe1e010, 0xe1e110, 0xe1e210) = 75
+memset(0xe1e010, '1', 248)                                              = 0xe1e010
+memset(0xe1e110, '2', 248)                                              = 0xe1e110
+memset(0xe1e210, '3', 120)                                              = 0xe1e210
+fwrite("\nNow let's free the chunk p2\n", 1, 29, 0x7f7db3ed7540)        = 29
+free(0xe1e110)                                                          = <void>
+fwrite("The chunk p2 is now in the unsor"..., 1, 89, 0x7f7db3ed7540)    = 89
+fwrite("Now let's simulate an overflow t"..., 1, 82, 0x7f7db3ed7540)    = 82
+fwrite("For a toy program, the value of "..., 1, 123, 0x7f7db3ed7540)   = 123
+fwrite("To achieve this stability we wil"..., 1, 136, 0x7f7db3ed7540)   = 136
+fprintf(0x7f7db3ed7540, "We are going to set the size of "..., 385, 376) = 88
+fwrite("\nNow let's allocate another chun"..., 1, 99, 0x7f7db3ed7540)   = 99
+fwrite("This malloc will be served from "..., 1, 129, 0x7f7db3ed7540)   = 129
+malloc(376)                                                             = 0xe1e110
+fprintf(0x7f7db3ed7540, "\np4 has been allocated at %p and"..., 0xe1e110, 0xe1ecd0) = 56
+fprintf(0x7f7db3ed7540, "p3 starts at %p and ends at %p\n", 0xe1e210, 0xe1e490) = 43
+fwrite("p4 should overlap with p3, in th"..., 1, 60, 0x7f7db3ed7540)    = 60
+fwrite("\nNow everything copied inside ch"..., 1, 145, 0x7f7db3ed7540)  = 145
+fwrite("Let's run through an example. Ri"..., 1, 50, 0x7f7db3ed7540)    = 50
+fprintf(0x7f7db3ed7540, "p4 = %s\n", "xk\355\263}\177")                 = 12
+fprintf(0x7f7db3ed7540, "p3 = %s\n", "33333333333333333333333333333333"...) = 129
+fprintf(0x7f7db3ed7540, "\nIf we memset(p4, '4', %d), we h"..., 376)    = 38
+memset(0xe1e110, '4', 376)                                              = 0xe1e110
+fprintf(0x7f7db3ed7540, "p4 = %s\n", "44444444444444444444444444444444"...) = 385
+fprintf(0x7f7db3ed7540, "p3 = %s\n", "44444444444444444444444444444444"...) = 129
+fwrite("\nAnd if we then memset(p3, '3', "..., 1, 46, 0x7f7db3ed7540)   = 46
+memset(0xe1e210, '3', 80)                                               = 0xe1e210
+fprintf(0x7f7db3ed7540, "p4 = %s\n", "44444444444444444444444444444444"...) = 385
+fprintf(0x7f7db3ed7540, "p3 = %s\n", "33333333333333333333333333333333"...) = 129
++++ exited (status 0) +++

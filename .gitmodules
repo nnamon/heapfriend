@@ -1,0 +1,9 @@
+[submodule "testcases/how2heap"]
+	path = testcases/how2heap
+	url = https://github.com/shellphish/how2heap.git
+[submodule "testcases/tools/villoc"]
+	path = tools/villoc
+	url = https://github.com/wapiflapi/villoc.git
+[submodule "tools/libheap"]
+	path = tools/libheap
+	url = https://github.com/cloudburst/libheap.git

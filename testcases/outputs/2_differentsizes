@@ -1,0 +1,14 @@
+__libc_start_main(0x400566, 1, 0x7fffffffe618, 0x400620 <unfinished ...>
+malloc(16)                                                              = 0x602010
+malloc(256)                                                             = 0x602030
+malloc(4096)                                                            = 0x602140
+malloc(65536)                                                           = 0x603150
+malloc(1048576)                                                         = 0x7ffff7eeb010
+malloc(1048576)                                                         = 0x7ffff790c010
+free(0x602010)                                                          = <void>
+free(0x602030)                                                          = <void>
+free(0x602140)                                                          = <void>
+free(0x603150)                                                          = <void>
+free(0x7ffff7eeb010)                                                    = <void>
+free(0x7ffff790c010)                                                    = <void>
++++ exited (status 0) +++

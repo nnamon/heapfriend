@@ -1,0 +1,6 @@
+__libc_start_main(0x400566, 1, 0x7ffc54163118, 0x4005a0 <unfinished ...>
+malloc(4)                                                               = 0x168c010
+free(0x168c010)                                                         = <void>
+free(0x168c010 <no return ...>
+--- SIGABRT (Aborted) ---
++++ killed by SIGABRT +++
