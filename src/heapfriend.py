@@ -90,6 +90,7 @@ class HeapState:
 
     def process_unit(self, op):
         self.allocations.append(op)
+        print op
 
     def parse_data(self, data):
         for i in data.split("\n"):
